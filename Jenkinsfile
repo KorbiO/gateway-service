@@ -16,13 +16,14 @@ pipeline {
 			withMaven(maven : 'maven-3'){
 				
 				bat './mvnw clean compile'
+				bat './mvnw package -DskipTests'
 				
 			}	
 				  }
 		}
 		stage('Build Docker Image'){
 			steps{
-        		bat 'docker build -t gateway-service:latest .'
+        		bat 'docker build -t omarkorbi/gateway-service:latest .'
         		}
     }
     stage('Push Docker Image'){
