@@ -22,7 +22,7 @@ pipeline {
 		}
 		stage('Build Docker Image'){
 			steps{
-        		bat 'docker build -t omarkorbi/gateway-service:latest .'
+        		bat 'docker build -t gateway-service:latest .'
         		}
     }
     stage('Push Docker Image'){
